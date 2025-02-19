@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void insert_element(int arr[], int *size, int element, int position) {
+void insert_element(int array[], int *size, int element, int position) {
     
     if (position < 0 || position > *size) {
         printf("Invalid position!\n");
@@ -9,11 +9,11 @@ void insert_element(int arr[], int *size, int element, int position) {
 
     
     for (int i = *size; i > position; i--) {
-        arr[i] = arr[i - 1];
+        array[i] = array[i - 1];
     }
 
     
-    arr[position] = element;
+    array[position] = element;
     
     
     (*size)++;
@@ -27,17 +27,17 @@ int main() {
 
     printf("Original Array: ");
     for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
+        printf("%d ", array[i]);
     }
     printf("\n");
 
     
-    insert_element(arr, &size, element_to_insert, position_to_insert);
+    insert_element(array, &size, element_to_insert, position_to_insert);
 
   
     printf("Array after insertion: ");
     for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
+        printf("%d ", array[i]);
     }
     printf("\n");
 
