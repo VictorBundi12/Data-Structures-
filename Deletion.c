@@ -1,30 +1,30 @@
 #include <stdio.h>
 
 
-void deleteElement(int arr[], int *size, int pos) {
-    if (pos < 0 || pos >= *size) {
+void deleteElement(int array[], int *size, int pos) {
+    if (position < 0 || position >= *size) {
         printf("Invalid position! Please enter a position between 0 and %d\n", *size - 1);
         return;
     }
 
     
-    for (int i = pos; i < *size - 1; i++) {
-        arr[i] = arr[i + 1];
+    for (int i = position; i < *size - 1; i++) {
+        array[i] = array[i + 1];
     }
     (*size)--; 
 }
 
 
-void displayArray(int arr[], int size) {
+void displayArray(int array[], int size) {
     printf("Array: ");
     for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
+        printf("%d ", array[i]);
     }
     printf("\n");
 }
 
 int main() {
-    int arr[100], size, pos;
+    int array[100], size, pos;
 
     
     printf("Enter the number of elements in the array: ");
@@ -33,20 +33,20 @@ int main() {
     
     printf("Enter %d elements: ", size);
     for (int i = 0; i < size; i++) {
-        scanf("%d", &arr[i]);
+        scanf("%d", &array[i]);
     }
 
-    displayArray(arr, size);
+    displayArray(array, size);
 
     
     printf("Enter the position to delete (0-based index): ");
     scanf("%d", &pos);
 
     
-    deleteElement(arr, &size, pos);
+    deleteElement(array, &size, pos);
 
    
-    displayArray(arr, size);
+    displayArray(array, size);
 
     return 0;
 }
